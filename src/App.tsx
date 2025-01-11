@@ -1,10 +1,19 @@
-import './App.css'
-import Page from './app/dashboard/page'
+import "./App.css";
+import LoginPage from "./app/login/page";
+import Page from "./app/dashboard/page";
+import ErrorPage from "./components/ui/ErrorPage";
+import { BrowserRouter, Route, Routes } from "react-router";
 
 function App() {
   return (
-    <Page />
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<Page />} />
+        <Route path="/*" element={<ErrorPage />}  />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
