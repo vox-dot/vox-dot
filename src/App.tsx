@@ -1,11 +1,9 @@
 import './App.css'
+import Page from './app/dashboard/page'
 
 function App() {
   return (
-    <>
-      <h1>Vox Dot</h1>
-      <p style={{color: 'gray'}}>Coming soon...</p>
-    </>
+    <Page />
   )
 }
 
