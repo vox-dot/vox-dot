@@ -19,6 +19,7 @@
 
 @layer base {
   :root {
+    --brand-color: #43c9eb;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -54,6 +55,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
+    --brand-color: #309fbb;
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
