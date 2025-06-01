@@ -13,9 +13,13 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { AudioWaveform } from "lucide-react"
+import { VoiceProvider } from "@/components/voice-context"
+import VoiceVisualizer from "@/components/voice-visualizer"
+import { useRef } from "react"
 
 
 export default function Page() {
+  const parentDivRef = useRef<HTMLDivElement>(null);
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -38,8 +42,10 @@ export default function Page() {
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
-            <h3 className="text-2xl font-semibold">Chat Interface</h3>
+          <div ref={parentDivRef} className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
+            <VoiceProvider>
+              <VoiceVisualizer parentDivRef={parentDivRef} />
+            </VoiceProvider>
           </div>
         </div>
       </SidebarInset>
